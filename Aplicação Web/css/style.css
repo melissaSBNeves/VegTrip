@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+
+}
+
+.container{
+    display: flex;
+    margin: 0;
+    width: 90%;
+
+}
+
+/* ------------------- HEADER ---------------------------- */
+.header .container{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
