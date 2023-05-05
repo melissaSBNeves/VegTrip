@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
-    font-family: Verdana;
+    font-family: 'Roboto Slab', serif;
 
 }
 
 .container{
     display: flex;
     margin: 0;
-    width: 90%;
+    width: 80%;
+
 
 }
 
@@ -21,4 +26,35 @@
 .header{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    font-weight: 500;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #004D3D;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.btt_entrar{
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    border: 0px;
+    background-color: #004D3D;
+    color: #FFF6E7;
+    font-weight: 500;
 }
