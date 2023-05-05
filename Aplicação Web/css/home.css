@@ -1,18 +1,16 @@
 /* --------- Sessão 1 -------------*/
-.sessao-1 .container{
-    align-items: center;
-}
-
-
 .sessao-1{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: #004D3D;
+    height: 500px;
+    background-image: url(../assets/fundo-s1.png);
+    color: black;
+
 }
 
-.content-s1{
+.sessao-1 .content{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,6 +33,7 @@ h3{
 h1{
     line-height: 50px;
     font-weight: 500;
+    color: #004D3D;
 }
 
 .destaque{
@@ -49,9 +48,55 @@ h1{
     color: #FFF6E7;
     border-radius: 8px;
     background-color: #004D3D;
-
-
 }
+
+/* --------- Sessão 2 -------------*/
+
+.sessao-2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.sessao-2 .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0px;
+    width: 100%;
+}
+
+.card {
+    box-sizing: border-box;
+    width: 250px;
+    height: 254px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
 
 
 

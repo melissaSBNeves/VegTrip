@@ -10,53 +10,69 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>Home</title>
 </head>
 
 <body>
     <!-- Header -->
-    <div class="header">
+    <header>
         <div class="container">
             <div class="logo">
                 <img src="./assets/logo_light.png">
             </div>
-
-                <div class="navbar">
-                    
-                        <a href="">Home</a>
-                        <a href="">Vegetarianismo</a>
-                        <a href="">Principais causas</a>
-                        <a href="">Custa caro?</a>
-                        <button class="btt_entrar">Entrar</button>
-                   
-                </div>
-
+            <div class="navbar">
+                <a href="">Home</a>
+                <a href="">Vegetarianismo</a>
+                <a href="">Principais causas</a>
+                <a href="">Custa caro?</a>
+                <button class="btt_entrar">Entrar</button>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0)
+        })
+    </script>
+
 
     <!-- Sessão 1  -->
     <div class="sessao-1">
         <div class="container">
-            <div class="content-s1">
+            <div class="content">
                 <div class="headline">
-                <h1>Tornar-se 
-                    <span class="destaque">vegetariano</span> 
-                    é fazer uma opção pela
-                    <span class="destaque">vida.</span>
-                <h1>
+                    <h1>Tornar-se
+                        <span class="destaque">vegetariano</span>
+                        é fazer uma opção pela
+                        <span class="destaque">vida.</span>
+                        <h1>
 
-                <h3>Junte-se à nossa comunidade vegetariana e tenha acesso a informações nutricionais, receitas deliciosas e conexão com outros vegetarianos. Cadastre-se agora para uma dieta mais saudável e sustentável!</h3>
-                <br>
+                            <h3>Junte-se à nossa comunidade vegetariana e tenha acesso a informações nutricionais,
+                                receitas deliciosas e conexão com outros vegetarianos. Cadastre-se agora para uma dieta
+                                mais saudável e sustentável!</h3>
+                            <br>
 
-                <button class="btt">Cadastra-se</button>
+                            <button class="btt">Cadastra-se</button>
                 </div>
-                <div class="card_sessao1"></div>
+                <div class="card_sClick meessao1"></div>
             </div>
         </div>
     </div>
 
     <!-- Sessão 2  -->
+    <div class="sessao-2">
+        <div class="container">
+            <div class="content">
+                <div class="card">Click me</div>
+                <div class="card">Click me</div>
+                <div class="card">Click me</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Sessão 3  -->
 
@@ -64,3 +80,4 @@
 </body>
 
 </html>
+
