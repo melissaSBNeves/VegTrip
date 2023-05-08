@@ -6,13 +6,12 @@
     justify-content: center;
     height: 500px;
     background-image: url(../assets/fundo-s1.png);
+    background-position: center;
     color: black;
-    background-repeat: no-repeat;
+    text-shadow: 1px 1px white;  
+    /* box-shadow: inset 6px 6px 10px 0px rgba(0, 0, 0, 0.774);
     background-size: cover;
-    /* position: absolute; */
-    bottom: 0;
-    left: 0;
-
+    background-attachment: fixed; */
 }
 
 .sessao-1 .content{
@@ -20,13 +19,14 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 100px 0px;
+
 }
 
 .headline{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 50%;
+    width: 40%;
 }
 
 h3{
@@ -36,15 +36,18 @@ h3{
 }
 
 h1{
-    line-height: 50px;
+    font-size: 30px;
+    line-height: 40px;
     font-weight: 500;
     color: #004D3D;
+    text-shadow: 1px 1px rgb(154, 154, 154);
 }
 
 .destaque{
     background-color: #004D3D;
     padding: 0px 5px ;
     color: white;
+    text-shadow: 1px 1px black;
 }
 
 .btt{
@@ -64,6 +67,7 @@ h1{
     align-items: center;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(180deg, #ffff 10%, #eaffce 20%);
 }
 
 .sessao-2 .content{
@@ -72,17 +76,100 @@ h1{
     align-items: center;
     margin: 100px 0px;
     width: 100%;
+   
 }
 
 .info-s2{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 20px 0px;
     width: 100%;
 }
 
+.text{
+    width: 50%;
+}
+
+.info-s2 p{
+    font-size: 18px;
+}
+
+.info-s2 img{
+    width: 400px;
+}
+
+.img{
+    margin: 0px;
+}
+
+/* ------------- Sessão 3 ----------------- */
+
+.sessao-3{
+    background-image: url(../assets/fundo-s3.png);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-shadow: 1px 1px white;  
+    box-shadow: inset 6px 6px 10px 0px rgba(0, 0, 0, 0.774);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sessao-3 .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* ------------- Sessão 4 ----------------- */
+
+.sessao-4{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sessao-4 .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.receitas{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card_receitas{
+    background-color: #FFF6E7;
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.452);
+    border-radius: 8px;
+    
+}
+
+.card_receitas img{
+    width: 340px;
+    padding: 10px;
+}
 
 
 
