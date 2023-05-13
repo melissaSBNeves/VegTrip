@@ -45,6 +45,10 @@ header{
     color: #004D3D;
 }
 
+.navbar a:houver{
+    border-bottom: #004D3D;
+}
+
 .logo img{
     width: 100px;
 }

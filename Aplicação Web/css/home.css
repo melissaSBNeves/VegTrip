@@ -250,3 +250,18 @@ h1{
   .coracao input:checked ~ svg {
     fill: #004D3D;
   }
+
+  /* ------------- Sessão 5 ----------------- */
+  .sessao-5{
+    background-color: #004D3D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #eaffce  ;
+    padding: 80px 0px;
+  }
+
+.sessao-5 h1{
+    color: white;
+}
