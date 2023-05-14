@@ -107,7 +107,7 @@ h1 {
 
 }
 
-/* ----------------Sessão 3------------------------ */
+/* ----------------Sessão 4------------------------ */
 .sessao-4 {
     display: flex;
     align-items: center;
@@ -184,9 +184,9 @@ h1 {
     width: 300px;
     height: 367px;
     cursor: pointer;
-}
+} 
 
-.sessao-5 h1{
+ .sessao-5 h1{
     color: #004D3D;
     margin-bottom: 20px;
 }
@@ -206,7 +206,8 @@ h1 {
     border-radius: 100%;
 }
 
-/* ----------------Sessão 5------------------------ */
+
+/* ----------------Sessão 6------------------------ */
 .sessao-6 {
     display: flex;
     align-items: center;
@@ -261,3 +262,65 @@ h1 {
 .sessao-6 img{
     width: 200px;
 }
+
+/* ----------------Sessão 7------------------------ */
+.sessao-7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/imgs/fundo-s5.png);
+}
+
+
+.sessao-7 .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 80px 0px;
+    width: 100%;
+    gap: 20px;
+}
+
+/* ----------------Sessão 8------------------------ */
+.sessao-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sessao-8 .content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 80px 0px;
+    width: 100%;
+    gap: 20px;
+}
+
+.sessao-8 .text h1{
+    color: #004D3D;
+    text-align: left;
+}
+
+.sessao-8 img {
+    width: 400px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sessao-8 span {
+    color: #004D3D;
+    font-weight: 700;
+}
+
+.sessao-8 p {
+    font-size: 18px;
+}
+
