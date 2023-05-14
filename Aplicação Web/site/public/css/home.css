@@ -5,16 +5,16 @@
     background-repeat: none;
     background-size: cover;
 
-    height: 90vh;   
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 
-.sessao-1 .content{
+.sessao-1 .content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,16 +26,16 @@
     font-weight: 300;
     text-align: left;
     line-height: 50px;
-    
+
 }
 
 .sessao-1 h1 span {
     font-weight: 700;
 }
 
-.btn-cadastrar{
+.btn-cadastrar {
     width: 10em;
-  }
+}
 
 /* ----------------Sessão 2------------------------ */
 .sessao-2 {
@@ -124,28 +124,78 @@ h1 {
     width: 100%;
 }
 
-.sessao-4 img{
+.sessao-4 img {
     width: 400px;
 }
 
-.text{
+.text {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.sessao-4 h1{
+.sessao-4 h1 {
     color: black;
     text-align: left;
 }
 
-.sessao-4 span{
+.sessao-4 span {
     color: #004D3D;
     font-weight: 700;
 }
 
-.sessao-4 p{
+.sessao-4 p {
     font-size: 18px;
 }
 
+/* ----------------Sessão 5------------------------ */
+.sessao-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+
+.sessao-5 .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 80px 0px;
+    width: 100%;
+}
+
+.principais-causas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-S5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(224, 236, 209, 0.69);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    width: 300px;
+    height: 367px;
+    cursor: pointer;
+}
+
+.sessao-5 img{
+    width: 200px;
+}
+
+.sessao-5 h2{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+}
+
+.circulo{
+    background-color: white;
+    border-radius: 100%;
+}
