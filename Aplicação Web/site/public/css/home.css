@@ -1,0 +1,151 @@
+/* ----------------Sessão 1------------------------ */
+.sessao-1 {
+    background-image: url(../assets/banner-s1.png);
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+
+    height: 90vh;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.sessao-1 .content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sessao-1 h1 {
+    font-size: 3em;
+    color: #fff;
+    font-weight: 300;
+    text-align: left;
+    line-height: 50px;
+    
+}
+
+.sessao-1 h1 span {
+    font-weight: 700;
+}
+
+.btn-cadastrar{
+    width: 10em;
+  }
+
+/* ----------------Sessão 2------------------------ */
+.sessao-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sessao-2 .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 80px 0px;
+    width: 100%;
+
+}
+
+.card-s2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 340px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    transition: 0.6s;
+    padding: 10px;
+}
+
+.card-s2:hover {
+    transform: scale(1.1)
+}
+
+.card-s2 img {
+    width: 80px;
+}
+
+/* ----------------Sessão 3------------------------ */
+.sessao-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/imgs/banner-s3.png);
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+
+.sessao-3 .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 80px 0px;
+    width: 100%;
+
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: center;
+    color: #fff;
+
+}
+
+/* ----------------Sessão 3------------------------ */
+.sessao-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sessao-4 .content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 80px 0px;
+    width: 100%;
+}
+
+.sessao-4 img{
+    width: 400px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sessao-4 h1{
+    color: black;
+    text-align: left;
+}
+
+.sessao-4 span{
+    color: #004D3D;
+    font-weight: 700;
+}
+
+.sessao-4 p{
+    font-size: 18px;
+}
+
+

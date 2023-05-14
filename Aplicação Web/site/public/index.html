@@ -2,84 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Página Inicial</title>
+  <title>VegTrip | Home</title>
 
-    <script src="./js/funcoes.js"></script>
+  <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+  <link rel="icon" href="./assets/icon/favicon2.ico">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div class="content">
+        <div class="logo">
+          <a href=""><img src="./assets/logo_dark.png" alt="" id="logoHeader"></a>
+        </div> <!-- logo -->
+
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">O que é?</a></li>
+            <li><a href="">Principais causas</a></li>
+            <li><a href="">Dietas</a></li>
+            <li><a href="">Sobre mim</a></li>
+            <li><a href="">Custa caro?</a></li>
+          </ul>
+
+          <button class="btn-entrar">Entrar</button>
+        </nav>
+      </div> <!-- flex -->
+
+    </div> <!-- container -->
+  </header>
+
+
+  <!--------------------- SESSÃO 1 ------------------------>
+  <section class="sessao-1">
+    <div class="container">
+      <div class="content">
+
+        <h1>Tornar-se <span>vegetariano</span> é fazer <br> uma opção pela <span>vida</span>.</h1>
+        <button class="btn-cadastrar">Cadastra-se</button>
+
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </section>
+
+
+  <!--------------------- SESSÃO 2 ------------------------>
+  <section class="sessao-2">
+    <div class="container">
+      <div class="content">
+
+        <div class="card-s2">
+          <img src="./assets/imgs/alimentos.png" alt="">
+          <p>Informações nutricional sobre os alimentos!</p>
         </div>
-      </div>
-    </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div>
-  </body>
+
+        <div class="card-s2">
+          <img src="./assets/imgs/informações.png" alt="">
+          <p>Toda o que precisa saber sobre o vegetarianismo</p>
+        </div>
+
+        <div class="card-s2">
+          <img src="./assets/imgs/receitas.png" alt="">
+          <p>Receitas deliciosas de acordo o seu tipo de dieta.</p>
+
+        </div>
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </section>
+
+
+  <!--------------------- SESSÃO 3 ------------------------>
+  <section class="sessao-3">
+    <div class="container">
+      <div class="content">
+
+        <h1> Nós estamos aqui para ajudá-lo a obter as informações e os recursos que você precisa para fazer uma
+          transição suave e bem-sucedida para uma dieta baseada em plantas.</h1>
+        <button class="btn-cadastrar">Cadastra-se</button>
+
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </section>
+
+  <!--------------------- SESSÃO 4 ------------------------>
+  <section class="sessao-4">
+    <div class="container">
+      <div class="content">
+
+        <div class="text">
+          <h1>Ser vegetariano é uma <span>escolha consciente</span> que vai além da simples alimentação. </h1>
+          <p>É uma opção que reflete preocupações com o meio ambiente, o bem-estar animal, a saúde e a qualidade de
+            vida. Ao adotar uma dieta vegetariana, você contribui para a redução do impacto ambiental causado pela
+            produção de carne e para a preservação dos recursos naturais do planeta. Além disso, você evita o sofrimento
+            dos animais que são criados em condições precárias e abatidos de forma cruel para alimentação.</p>
+        </div>
+
+        <div class="img-s4">
+          <img src="./assets/imgs/fotoS2.png" alt="">
+        </div>
+
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </section>
+
+  <!--------------------- SESSÃO 5 ------------------------>
+  <section class="sessao-45">
+    <div class="container">
+      <div class="content">
+
+        <div class="card-S5">
+          <h2>Saúde</h2>
+          <div class="circulo"><img src="" alt=""></div>
+        </div>
+        <div class="card-S5">
+          <h2>Meio Ambiente</h2>
+          <div class="circulo"><img src="" alt=""></div>
+        </div>
+        <div class="card-S5">
+          <h2>Ética animal</h2>
+          <div class="circulo"><img src="" alt=""></div>
+        </div>
+        
+      </div> <!-- content -->
+    </div> <!-- container -->
+  </section>
+
+  <script src="./js/menu.js"></script>
+</body>
 
 </html>
