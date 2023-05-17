@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/user.js"></script>
+    <link rel="stylesheet" href="../css/user.css">
+    <title>VegTrip | Vegetarianismo</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="content">
+                <div class="logo">
+                    <img src="../assets/logo_dark.png" alt="">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="">Vegetarianismo</a></li>
+                        <li><a href="">Receitas</a></li>
+                        <li><a href="">Calculadora de Proteínas</a></li>
+                    </ul>
+                </nav>
+
+
+                <div class="user">
+                    <a href="">Usuário</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                    </svg>
+                </div>
+
+            </div> <!--content-->
+        </div> <!--container-->
+    </header>
+
+
+    <section class="banner-inicial">
+        <div class="container">
+            <div class="content">
+                <h1>Tudo o que você precisa saber sobre o vegetarianismo </h1>
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
+
+    <section class="sessao-2">
+        <div class="container">
+            <div class="content">
+                <div id="conteudo_veg">
+                   
+                </div>
+
+                <div class="indice">
+                    <button onclick="mostrarConteudo(historia)" class="btt_indice">História</button>
+                    <button onclick="mostrarConteudo(etica_animal)" class="btt_indice">Ética Animal</button>
+                    <button onclick="mostrarConteudo(industria)" class="btt_indice">Indústria</button>
+                    <button onclick="mostrarConteudo(meio_ambiente)" class="btt_indice">Meio Ambiente</button>
+                    <button onclick="mostrarConteudo(saude)" class="btt_indice">Saúde</button>
+                    <button onclick="mostrarConteudo(dignidade_humana)" class="btt_indice">Dignidade Humana</button>
+                    <button onclick="mostrarConteudo(documentario)" class="btt_indice">Documentários</button>
+                </div>
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    mostrarConteudo(historia)
+
+    function mostrarConteudo(conteudo){
+        conteudo_veg.innerHTML = conteudo;
+    }
+</script>
