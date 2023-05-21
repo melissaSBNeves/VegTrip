@@ -28,6 +28,7 @@ header{
   width: 100%;
   padding: 40px;
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   transition: 0.6s;
@@ -84,7 +85,7 @@ button{
   cursor: pointer;
   padding: 10px;
   font-size: 1rem;
-  width: 5em;
+  /* width: 5em; */
   transition: 0.6s;
 }
 
@@ -95,7 +96,7 @@ button:active {
  }
  
  button:hover:not(:disabled) {
-  background: #004D3D;
+  background: #86B649;
   color: white;
   transform: scale(1.1);
   border: 1px solid white;

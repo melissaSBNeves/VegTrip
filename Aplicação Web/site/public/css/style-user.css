@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
+/* ------------ HEADER ------------ */
+header .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+
+header {
+  width: 100%;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  transition: 0.6s;
+  background-color: transparent;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0px 10px;
+}
+
+header img {
+  width: 100px;
+}
+
+header ul {
+  display: flex;
+  align-self: center;
+  list-style: none;
+}
+
+header ul li {
+  margin: 0px 20px;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* ---------------------------- PÁGINA VEGETARIANISMO------------------------------------------ */
+/* Sessão 1 - banner inicial */
+.banner-inicial {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#fundo-banner-veg{
+    background-image: url(../assets/imgs/fundo-s3.png);
+    background-color: rgba(0, 0, 0, 0.699);
+    background-blend-mode: multiply;
+  }
+  
+  .banner-inicial h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .banner-inicial .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+  
+  
+  /* Sessão 2 - banner inicial */
+  .sessao-2 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sessao-2 .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin: 80px 0px;
+    gap: 50px;
+  }
+  
+  .indice {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+  }
+  
+  
+  .btt_indice {
+    background-color: #fff;
+    height: 50px;
+    width: 270px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    border: 2px solid #004D3D;
+    color: #004D3D ;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+  
+  .btt_indice:hover{
+      background-color: #004D3D;
+      color: #fff;
+  }
+  
+  #conteudo_veg{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+  }
+
+  #conteudo_veg p{
+    text-align: justify;
+    line-height: 40px;
+    text-indent: 30px;
+   }
+  
+  
+  .titulo_conteudo{
+    margin-bottom: 10px;
+  }
+
+
+  /* ---------------------------- PÁGINA CALCULADORA------------------------------------------ */
+  #fundo-banner-calculadora{
+    background-image: url(../assets/imgs/banner-proteinas.png);
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.699);
+    background-blend-mode: multiply;
+    gap: 10px;
+  }
+
+  .banner-inicial h3{
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+/* ---------------------------- PÁGINA RECEITAS ------------------------------------------ */
+#fundo-banner-receitas{
+  background-image: url(../assets/imgs/banner-receitas.png);
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.699);
+  background-blend-mode: multiply;
+  gap: 10px;
+}
+

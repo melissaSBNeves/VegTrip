@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/user.js"></script>
-    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/style-user.css">
+    <link rel="stylesheet" href="../css/veg.css">
     <title>VegTrip | Vegetarianismo</title>
 </head>
 
 <body>
+
+    <div id="fundo-banner-veg">
     <header>
         <div class="container">
             <div class="content">
@@ -50,15 +53,17 @@
         </div> <!--container-->
     </section>
 
+</div> <!-- fundo-banner-veg -->
+
     <section class="sessao-2">
         <div class="container">
             <div class="content">
                 <div id="conteudo_veg">
-                   
+
                 </div>
 
                 <div class="indice">
-                    <button onclick="mostrarConteudo(historia)" class="btt_indice">História</button>
+                    <button onclick="mostrarConteudo(historia)" type="submit" class="btt_indice">História</button>
                     <button onclick="mostrarConteudo(etica_animal)" class="btt_indice">Ética Animal</button>
                     <button onclick="mostrarConteudo(industria)" class="btt_indice">Indústria</button>
                     <button onclick="mostrarConteudo(meio_ambiente)" class="btt_indice">Meio Ambiente</button>
@@ -75,9 +80,18 @@
 
 <script>
 
-    mostrarConteudo(historia)
+    mostrarConteudo(historia,1)
 
-    function mostrarConteudo(conteudo){
+    function mostrarConteudo(conteudo) {
         conteudo_veg.innerHTML = conteudo;
+
+        var btt = document.getElementById("btt_indice-" + posicao)
+        
+        btt.addEventListener("click", () => {
+            btt.style.backgroundColor = "#004D3D";
+            btt.style.color = "#ffff";
+
+        })
+
     }
 </script>

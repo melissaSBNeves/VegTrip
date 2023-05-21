@@ -173,18 +173,87 @@ h1 {
     gap: 30px;
 }
 
-.card-S5 {
+.card-S5{
+    position: relative;
+    cursor: pointer;
+}
+
+.card-S5 .face{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    background: rgba(224, 236, 209, 0.69);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    width: 300px;
-    height: 367px;
-    cursor: pointer;
+    gap: 10px;
+    position: relative;
+    transition: 0.5;
+    z-index: 1;
+
 } 
+
+.card-S5 .face.face1{
+    z-index: 2;
+    margin-top: -50px;
+    transform: translateY(100px);
+    background: rgb(224, 236, 209);
+    border-radius: 8px;
+    width: 300px;
+    height: 250px;
+    transition: 0.8s;
+    display: flex;
+    
+   
+}
+
+.card-S5:hover .face.face1{
+    border-end-end-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-top: 50px;
+    background-color: #004D3D;
+    transform: translateY(0);
+    padding-bottom: -100px;
+}
+
+.card-S5 .face.face1 h2{
+    transition: 0.8s;
+}
+
+.card-S5:hover .face.face1 h2{
+    margin-bottom: -70px;
+    color: #fff;
+}
+
+
+.card-S5 .face.face2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -125px;
+    background: rgb(224, 236, 209);
+    transform: translateY(-100px);
+    width: 300px;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+.card-S5 .face.face2 p{
+    font-size: 14px;
+}
+
+
+.card-S5:hover .face.face2{
+    position: relative;
+    background: #004D3D;
+    color: #fff;
+    transform: translateY(0);
+    padding: 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: -500px;
+    display: flex;
+
+}
+
 
  .sessao-5 h1{
     color: #004D3D;
@@ -192,12 +261,12 @@ h1 {
 }
 
 .sessao-5 img{
-    width: 200px;
+    width: 150px;
 }
 
 .sessao-5 h2{
     font-weight: 500;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 37px;
 }
 
@@ -319,8 +388,3 @@ h1 {
     color: #004D3D;
     font-weight: 700;
 }
-
-.sessao-8 p {
-    font-size: 18px;
-}
-
