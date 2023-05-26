@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/user.js"></script>
+    <link rel="stylesheet" href="../css/style-user.css">
+    <link rel="stylesheet" href="../css/veg.css">
+    <title>VegTrip | Vegetarianismo</title>
+</head>
+
+<body>
+
+    <div id="fundo-banner-veg">
+        <header>
+            <div class="container">
+                <div class="content">
+                    <div class="logo">
+                        <img src="../assets/logo_dark.png" alt="">
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="vegetariano.html">Vegetarianismo</a></li>
+                            <li><a href="receitas.html">Receitas</a></li>
+                            <li><a href="calculadora.html">Calculadora de Proteínas</a></li>
+                        </ul>
+                    </nav>
+
+
+                    <div class="user">
+                       <button onclick="limparSessao()" class="btn_sair">Sair</button>
+                    </div>
+
+                </div> <!--content-->
+            </div> <!--container-->
+    </header>
+
+
+    <section class="banner-inicial">
+        <div class="container">
+            <div class="content">
+                <h1>Tudo o que você precisa saber sobre o vegetarianismo </h1>
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
+
+</div> <!-- fundo-banner-veg -->
+
+    <section class="sessao-2">
+        <div class="container">
+            <div class="content">
+                <div id="conteudo_veg">
+
+                </div>
+
+                <div class="indice">
+                    <button onclick="mostrarConteudo(historia)" type="submit" class="btt_indice">História</button>
+                    <button onclick="mostrarConteudo(etica_animal)" class="btt_indice">Ética Animal</button>
+                    <button onclick="mostrarConteudo(industria)" class="btt_indice">Indústria</button>
+                    <button onclick="mostrarConteudo(meio_ambiente)" class="btt_indice">Meio Ambiente</button>
+                    <button onclick="mostrarConteudo(saude)" class="btt_indice">Saúde</button>
+                    <button onclick="mostrarConteudo(dignidade_humana)" class="btt_indice">Dignidade Humana</button>
+                    <button onclick="mostrarConteudo(documentario)" class="btt_indice">Documentários</button>
+                </div>
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    mostrarConteudo(historia,1)
+
+    function mostrarConteudo(conteudo) {
+        conteudo_veg.innerHTML = conteudo;
+
+        var btt = document.getElementById("btt_indice-" + posicao)
+        
+        btt.addEventListener("click", () => {
+            btt.style.backgroundColor = "#004D3D";
+            btt.style.color = "#ffff";
+
+        })
+
+    }
+</script>
