@@ -46,8 +46,8 @@
         <section class="banner-inicial" id="banner-calculadora">
             <div class="container">
                 <div class="content">
-                    <h1>Calcule quantas protéinas você precisa <br> ingerir por dia</h1>
-                    <h3>Descubra os alimentos de origem vegetal mais ricos nesse macronutriente </h3>
+                    <h1>Calcule o quanto de proteínas, carboidrato e gordura você precisa ingerir por dia.</h1>
+                    <h3>E descubra os alimentos de origem vegetal mais ricos nesses macronutrientes!</h3>
                 </div> <!--content-->
             </div> <!--container-->
         </section>
@@ -57,45 +57,93 @@
     <section class="calculo">
         <div class="container">
             <div class="content">
-                
+
                 <div class="formulario">
-                    <div class="campo">
-                        <span>Sexo:</span><br>
-                        <select name="" id="select_sexo">
-                            <option value="M" id="opt_masc">Masculino</option>
-                            <option value="F" id="opt_fem">Feminino</option>
-                        </select>
+                    <div class="row_form">
+                        <div class="campo">
+                            <span>Sexo:</span><br>
+                            <select name="" id="select_sexo">
+                                <option value="M" id="opt_masc">Masculino</option>
+                                <option value="F" id="opt_fem">Feminino</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <span>Idade:</span><br>
+                            <input type="text" id="inp_idade" placeholder="18">
+                        </div>
+
                     </div>
-    
-                    <div class="campo">
-                        <span>Idade:</span><br>
-                        <input type="text" id="inp_idade">
+
+                    <div class="row_form">
+
+                        <div class="campo">
+                            <span>Peso:</span><br>
+                            <div class="peso">
+                                <input type="text" id="inp_peso" placeholder="65">
+                                <p>kg</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="campo">
+                            <span>Altura:</span><br>
+                            <div class="altura">
+                                <input type="text" id="inp_altura_m" placeholder="1">
+                                <p>m</p>
+                                <input type="text" id="inp_altura_cm" placeholder="65">
+                                <p>cm</p>
+                            </div>
+                        </div>
                     </div>
-    
-                    <div class="campo">
-                        <span>Peso:</span><br>
-                        <input type="text" id="inp_peso">
-                    </div>
-                    
-                    <div class="campo">
-                        <span>Altura:</span><br>
-                        <input type="text" id="inp_altura">
-                    </div>
-    
+
                     <div class="campo">
                         <span>O quão ativo você é:</span><br>
                         <select name="" id="select_atividade">
+                            <option value="extremamente">Extremamente ativo </option>
                             <option value="muito">Muito Ativo</option>
-                            <option value="medio">Ativo</option>
-                            <option value="pouco">Pouco ativo</option>
+                            <option value="medio">Moderadamente ativo </option>
+                            <option value="pouco">Levemente ativo </option>
                             <option value="sedentario">Sedentário</option>
                         </select>
                     </div>
 
-                    <button onclick="calcularProteinas()">Calcular Proteínas</button>
+                    <button id="calcule" onclick="calcularProteinas()">Calcular Macronutrientes</button>
                     <div id="msgErro"></div>
 
+
                 </div><!-- formulario -->
+
+                <div class="desc-calc">
+                    <div id="msgResultado">
+
+                        <h3>Entenda em qual nível de atividade você se encaixa:</h3>
+
+                        <br>
+
+                        <ul>
+                            <li><span>Sedentário:</span> pouco ou nenhum exercício</li>
+                            <li> <span>Levemente ativo:</span> exercício leve ou esportes 1-3 dias/semana</li>
+                            <li><span>Moderadamente ativo:</span> exercício moderado ou esportes 3-5 dias/semana</li>
+                            <li><span>Muito ativo:</span> exercício intenso ou esportes 6-7 dias/semana</li>
+                            <li><span>Muito ativo:</span> exercício muito intenso, trabalho físico ou exercícios duas
+                                vezes
+                                por dia</li>
+                        </ul>
+
+                        <br>
+                        <p>Lembrando que essas serão apenas estimativas e podem variar de pessoa para pessoa. É sempre recomendado buscar a orientação de um profissional de saúde qualificado.</p>
+
+                        
+                    </div><!-- msgResultado -->
+
+                    <div id="verAlimentos" style="visibility: hidden;">
+                        <button onclick="verAlimentos()">Ver Alimentos</button>
+                    </div>
+
+                </div> <!-- desc-calc -->
+
             </div> <!-- content -->
         </div> <!-- container -->
     </section>
@@ -105,29 +153,79 @@
 </html>
 
 <script>
-    function calcularProteinas(){
+    function calcularProteinas() {
         var sexo = select_sexo.value;
         var idade = Number(inp_idade.value);
         var peso = Number(inp_peso.value);
-        var altura = Number(inp_altura.value);
+        var altura = Number(inp_altura_cm.value) + (Number(inp_altura_m.value) * 100);
         var nivel_atividade = select_atividade.value;
 
-        if(idade == " " || peso == " " || altura == " "){
+        if (idade == " " || peso == " " || altura == " ") {
             msgErro.innerHTML = "É preciso preencher todos os campos!";
-        }else{
+        } else {
 
-            var valor_conforme 
+            // taxa metabólica basal (TMB)
+            var tmb = 0;
 
-            if(sexo == "F"){
+            if (sexo == "M") {
+                tmb = 88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)
 
-                if(idade >= 10 && idade <= 18){
-                    
-                }
-
-            }else{
-
+            } else if (sexo == "F") {
+                tmb = 447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)
             }
 
+            //fator de atividade física:
+            var fator_atividade = 0;
+
+            if (nivel_atividade == "sedentario") {
+                fator_atividade = 1.2;
+
+            } else if (nivel_atividade == "pouco") {
+                fator_atividade = 1.375;
+
+            } else if (nivel_atividade == "medio") {
+                fator_atividade = 1.55;
+
+            } else if (nivel_atividade == "muito") {
+                fator_atividade = 1.725;
+
+            } else if (nivel_atividade == "extremamente") {
+                fator_atividade = 1.9;
+            }
+
+
+            var totalCaloriasPorDia = tmb * fator_atividade;
+
+            // 15% das calorias totais, 1g de proteína = 4 calorias
+            var proteinas = (totalCaloriasPorDia * 0.15) / 4;
+
+            // 55% das calorias totais, 1g de carboidrato = 4 calorias
+            var carboidratos = (totalCaloriasPorDia * 0.55) / 4;
+
+            // 30% das calorias totais, 1g de gordura = 9 calorias
+            var gorduras = (totalCaloriasPorDia * 0.3) / 9;
+
+            msgResultado.innerHTML = ` `
+            msgResultado.innerHTML += `
+
+
+            <p>De acordo com taxa metábolica basal 
+            você precisa consumir no mínimo <span class="destaque">${parseInt(totalCaloriasPorDia)}kcal</span> por dia.<br><br>
+
+
+            <span class="destaque">Proteínas: </span>${proteinas.toFixed(2)}g <br><br>
+            <span class="destaque">Carboidratos: </span> ${carboidratos.toFixed(2)}g <br><br>
+            <span class="destaque">Gorduras: </span> ${gorduras.toFixed(2)}g <br><br></p>
+
+            <h3>Agora veja como é possível bater esses macros sem alimentos de origem animal</h3>
+            `
+            botaoVisivel()
         }
+    }
+
+
+    function botaoVisivel() {
+        var btt_alimentos = document.getElementById("verAlimentos");
+        btt_alimentos.style.visibility = "visible";
     }
 </script>

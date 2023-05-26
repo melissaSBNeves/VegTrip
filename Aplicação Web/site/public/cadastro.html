@@ -66,9 +66,19 @@
                         <span>Há quanto tempo é vegetariano:</span>
                         <select name="" id="experiencia_input">
                             <option value="iniciante">Estou começando agora</option>
-                            <option value="pouco tempo">Há menos de 6 meses</option>
-                            <option value="médio">Há menos de 2 ano</option>
+                            <option value="pouco">Há menos de 6 meses</option>
+                            <option value="medio">Há menos de 2 ano</option>
                             <option value="experiente">Há mais de 3 anos</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <span>Qual tipo de dieta você segue?</span>
+                        <select name="" id="dieta_select">
+                            <option value="1">Lacto-ovo-vegetariana</option>
+                            <option value="2">Ovo-vegetariana</option>
+                            <option value="3">Lacto-vegetariana</option>
+                            <option value="4">Vegana</option>
                         </select>
                     </div>
 
@@ -113,10 +123,11 @@
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
-        var dtNascVar = dtn_input;
-        var sexoVar = sexo_input;
-        var experienciaVar = experiencia_input;
+        var dtNascVar = dtn_input.value;
+        var sexoVar = sexo_input.value;
+        var experienciaVar = experiencia_input.value;
         var senhaVar = senha_input.value;
+        var dietaVar = dieta_select.value
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
