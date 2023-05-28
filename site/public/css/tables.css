@@ -1,0 +1,20 @@
+.table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    width: 100%;
+    align-self: center;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    background-color: #004D3D;
+    color: white;
+    padding: 5px ;
+}

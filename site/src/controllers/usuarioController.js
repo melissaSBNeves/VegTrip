@@ -66,7 +66,7 @@ function cadastrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var dtNasc = req.body.dtNacServer;
-    var sexo = req.body.sexoServer;
+    var genero = req.body.generoServer;
     var experiencia = req.body.expServer;
     var dieta = req.body.dietaServer;
 
@@ -79,17 +79,17 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     }else if (dtNasc == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    }else if (sexo == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua data nascimento está undefined!");
+    }else if (genero == undefined) {
+        res.status(400).send("Seu gênero está undefined!");
     }else if (experiencia == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua experiencia está undefined!");
     }else if (dieta == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+        res.status(400).send("Sua dieta está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, dtNasc, sexo, experiencia, dieta)
+        usuarioModel.cadastrar(nome, email, senha, dtNasc, genero, experiencia, dieta)
             .then(
                 function (resultado) {
                     res.json(resultado);

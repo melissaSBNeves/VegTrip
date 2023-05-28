@@ -7,13 +7,15 @@ CREATE TABLE usuario (
     nome VARCHAR(50),
     email VARCHAR(90),
     senha VARCHAR(20),
-    sexo CHAR(1),
+    genero CHAR(1),
     dtNac DATE,
-    experiencia VARCHAR(45)
+    dataRegistro DATETIME default current_timestamp,
+    experiencia VARCHAR(45),
+     CONSTRAINT chkSexo CHECK (genero IN ('F','M', 'O')),
+     CONSTRAINT chkExp CHECK (experiencia IN ('iniciante', 'pouco', 'medio', 'experiente'))
 );
 
-ALTER TABLE usuario ADD CONSTRAINT chkSexo CHECK (sexo IN ('F','M'));
-ALTER TABLE usuario ADD CONSTRAINT chkExp CHECK (experiencia IN ('iniciante', 'pouco', 'medio', 'experiente'));
+
 
 CREATE TABLE tipoDieta (
 	idTipoDieta INT PRIMARY KEY AUTO_INCREMENT,
