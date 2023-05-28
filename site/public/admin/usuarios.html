@@ -68,26 +68,7 @@
 
 <script>
     nav_menuLateral.innerHTML = menuLateral;
-
-    // var lista = [];
-
-
-    // function listar() {
-
-    //     var user = {
-    //     id: inp_id.value,
-    //     nome: inp_nome.value
-    // }
-    //     lista.push(user)
-
-    // }
-
-    // function mostrar(){
-    //     for (var i = 0; i < lista.length; i++) {
-
-    // }
-    // }
-
+    
     function atualizarFeed() {
 
         fetch("/usuarios/listar").then(function (resposta) {
@@ -112,7 +93,6 @@
                             <td>${usuario.tipoDieta}</td>
                         <tr>
                         `
-
                     }
 
                 });

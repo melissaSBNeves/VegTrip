@@ -1,12 +1,12 @@
 /* -------------- CADASTRO -------------- */
-.sessao-form .container{
+.sessao-form .container {
     width: 90%;
     align-items: center;
     justify-content: center;
 
 }
 
-.cadastro{
+.cadastro {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -15,7 +15,7 @@
     height: 40vw;
 }
 
-.formulario{
+.formulario {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -23,55 +23,57 @@
     align-items: center;
 }
 
-.img{
+.img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.img img{
+.img img {
     width: 550px;
 }
 
 
-.sessao-form .logo{
+.sessao-form .logo {
     width: 80%;
     margin-left: 50px;
-} 
-.sessao-form .logo img{
+}
+
+.sessao-form .logo img {
     width: 125px;
     margin-top: 15px;
-} 
+}
 
 .campo {
     display: flex;
     flex-direction: column;
     justify-content: start;
-  }
+}
 
-  .formulario span {
+.formulario span {
     font-size: 15px;
     font-weight: 800;
-  }
-  
-  .formulario input {
+}
+
+.formulario input {
     border: none;
     height: 40px;
     border-radius: 10px;
     padding: 10px;
-    
+
     background: #EBEBEB;
     border-radius: 10px;
-  }
+}
 
-.dtn-sexo, .senha-confirma{
+.dtn-sexo,
+.senha-confirma {
     display: flex;
     justify-content: space-between;
     width: 400px;
-  }
+}
 
 
-select{
+select {
     border: none;
     height: 40px;
     border-radius: 10px;
@@ -81,36 +83,36 @@ select{
     border-radius: 10px;
 }
 
-.inpPequeno{
+.inpPequeno {
     width: 195px;
 }
 
-.btn-form{
+.btn-form {
     color: white;
     background-color: #004D3D;
     width: 400px;
 }
 
-#msgSenha{
+#msgSenha {
     font-size: 12px;
     text-align: left;
     width: 400px;
     margin-top: -15px;
 }
 
-#msgConta{
+#msgConta {
     font-size: 16px;
     margin-top: -15px;
 }
 
 
-#msgConta span a{
+#msgConta span a {
     text-decoration: none;
-    color: #004D3D; 
+    color: #004D3D;
 }
 
 /* -------------- Login -------------- */
-.login{
+.login {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -124,8 +126,104 @@ select{
     flex-direction: column;
     justify-content: start;
     width: 400px;
-  }
+}
 
-#nome_input, #email_input{
+#nome_input,
+#email_input {
     width: 400px;
 }
+
+/* --------- RECEITAS ----------- */
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#mostrarIngredientes {
+    background: #EBEBEB;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredientes{
+    padding: 2px 6px;
+    height: 30px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.ingredientes button{
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(193, 99, 99);
+    color: white;
+}
+
+.ingredientes button:active {
+    color: white;
+    transform: translateY(0.2rem);
+    border: 1px solid white;
+   }
+   
+   .ingredientes button:hover:not(:disabled) {
+    background: #f04a4a;
+    color: white;
+    transform: scale(1.1);
+    border: 1px solid white;
+   }
+   
+   .ingredientes button:disabled {
+    cursor: auto;
+    color: grey;
+   }
+
+
+.cadastro-receitas {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cadastro-receitas .campo textarea {
+    background: #EBEBEB;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cadastro-receitas .campo {
+    width: 400px;
+}
+
+.row-ingredientes{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row-ingredientes input{
+    width: 340px;
+}   
+
+.row-ingredientes button{
+    width: 50px;
+    font-size: 20px;
+    background-color: #004D3D;
+    color: white;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+

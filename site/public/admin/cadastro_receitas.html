@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Receitas | VegTrip</title>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/receitas.js"></script>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/style-admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+</head>
+
+<body>
+    <!-- Menu Lateral -->
+    <nav class="menu-lateral" id="nav_menuLateral">
+        <!-- Armazenado em variável menuLateral e chamado no js  -->
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="content">
+                <div class="boas-vinda">
+                    <h1>Receitas</h1>
+                    <span class="icon"><i class="bi bi-bell-fill"></i></span>
+                </div>
+
+                <div class="subtitulo">
+                    <h2>Cadastro de receitas</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="form">
+        <div class="container">
+            <div class="content">
+
+                <div class="cadastro-receitas">
+                    <div class="formulario">
+                        <div class="campo">
+                            <span>Nome da receita:</span>
+                            <input id="nome_receita_input" type="text" placeholder="Seu nome">
+                        </div>
+
+                        <div class="campo">
+                            <span>Tipo de receita:</span>
+                            <select name="" id="dieta_select">
+                                <option value="1">Lacto-ovo-vegetariana</option>
+                                <option value="2">Ovo-vegetariana</option>
+                                <option value="3">Lacto-vegetariana</option>
+                                <option value="4">Vegana</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <span>Descrição:</span>
+                            <textarea name="" id="desc_textarea" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <div class="campo">
+                            <span>Foto:</span>
+                            <input id="foto_input" type="file">
+                        </div>
+
+                        <div class="campo">
+                            <span>Ingredientes:</span>
+
+                            <div class="row-ingredientes">
+                                <input type="text" id="inp_ingedientes">
+                                <button onclick="adcionarIngredientes()">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+
+                            <div id="mostrarIngredientes"></div>
+                        </div>
+
+
+                        <div class="campo">
+                            <span>Modo preparo:</span>
+                            <textarea name="" id="modoPreparo_textarea" cols="30" rows="10"></textarea>
+                        </div>
+
+
+                        <button class="btn-form" onclick="cadastrar()">Cadastrar</button>
+
+                    </div>
+
+                </div><!-- cadastro-receitas -->
+            </div><!-- content -->
+        </div><!-- container -->
+    </section><!-- form -->
+
+
+</body>
+
+</html>
+
+<script>
+    nav_menuLateral.innerHTML = menuLateral;
+
+    var listaIngredientes = [];
+
+
+    function excluir(item){
+        listaIngredientes.splice(item)
+
+        for(var i = 0; i < listaIngredientes.length; i++){
+            if(listaIngredientes[i] != listaIngredientes){
+                document.getElementById(`ingredientes${i}`).style.backgroundColor = 'red';
+            }
+        }
+        
+    }
+
+    function adcionarIngredientes() {
+        var ingredientes = inp_ingedientes.value;
+
+        listaIngredientes.push(ingredientes);
+
+            mostrarIngredientes.innerHTML = " ";
+        for (var i = 0; i < listaIngredientes.length; i++) {
+            mostrarIngredientes.innerHTML += `<div class="ingredientes" id="ingredientes${i}">${listaIngredientes[i]}
+            <button id="btn_excluir" onclick="excluir(${i})">
+                <i class="bi bi-trash"></i>    
+            </button></div>`
+        }
+    }
+
+    function visualizarReceita() {
+        nomeReceita.innerHTML = nome_receita_input.value
+    }
+
+</script>

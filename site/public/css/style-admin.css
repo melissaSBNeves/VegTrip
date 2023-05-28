@@ -194,3 +194,35 @@ header{
 .sessao2 .container .content .graficos .grafico-barras  {
     width: 60vw;
 }
+
+button{
+    padding: 8px;
+    background-color: #fff;
+    color: #004D3D;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    /* width: 5em; */
+    transition: 0.6s;
+  }
+  
+
+button:active {
+    color: white;
+    transform: translateY(0.2rem);
+    border: 1px solid white;
+   }
+   
+   button:hover:not(:disabled) {
+    background: #86B649;
+    color: white;
+    transform: scale(1.1);
+    border: 1px solid white;
+   }
+   
+   button:disabled {
+    cursor: auto;
+    color: grey;
+   }
