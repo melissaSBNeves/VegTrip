@@ -42,11 +42,11 @@ CREATE TABLE receitas(
 		REFERENCES tipoDieta (idTipoDieta)
 );
 
--- INSERT INTO (nome, descricao, foto, ingredientes, modo_preparo, fkTipoDieta_receitas) VALUES
-	-- ()
 
 INSERT INTO tipoDieta VALUES 
 	(NULL, 'Lacto-ovo-vegetariana'),
     (NULL, 'Ovo-vegetariana'),
     (NULL, 'Lacto-vegetariana'),
     (NULL, 'Vegana');
+    
+SELECT * FROM receitas;

@@ -12,12 +12,18 @@ SELECT idUsuario AS 'id',
         
 SELECT * FROM view_listar_usuarios;
 
+
+    
+
+
 -- TOTAL USUÁRIOS 
-SELECT count(idUsuario) FROM usuario;
+SELECT count(idUsuario) AS 'totalUsuarios'FROM usuario;
+
+
 
 -- QUANTIDADE DE USUÁRIOS POR DIA 
 SELECT DATE_FORMAT(dataRegistro, '%m-%d') AS mes_registro,
-		count(idUsuario) AS qtd_registro FROM usuario GROUP BY mes_oregistro;
+		count(idUsuario) AS qtd_registro FROM usuario GROUP BY mes_registro;
 
 -- QUANTIDADE DE USUÁRIOS POR GÊNERO
 SELECT genero AS genero, count(idUsuario) FROM usuario GROUP BY genero;
