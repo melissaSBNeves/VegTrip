@@ -1,4 +1,4 @@
-var avisoModel = require("../models/avisoModel");
+var receitaModel = require("../models/receitaModel");
 
 function testar(req, res) {
     console.log("ENTRAMOS NO avisoController");
@@ -6,7 +6,7 @@ function testar(req, res) {
 }
 
 function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+    receitaModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -22,7 +22,7 @@ function listar(req, res) {
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    avisoModel.listarPorUsuario(idUsuario)
+    receitaModel.listarPorUsuario(idUsuario)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -47,7 +47,7 @@ function listarPorUsuario(req, res) {
 function pesquisarDescricao(req, res) {
     var descricao = req.params.descricao;
 
-    avisoModel.pesquisarDescricao(descricao)
+    receitaModel.pesquisarDescricao(descricao)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -67,17 +67,20 @@ function pesquisarDescricao(req, res) {
 
 function publicar(req, res) {
     var titulo = req.body.titulo;
+    var dieta = req.body.dieta;
     var descricao = req.body.descricao;
-    var idUsuario = req.params.idUsuario;
+    var ingredientes = req.body.ingredientes;
+    var foto = req.body.foto;
+    var modo_preparo = req.body.modo_preparo;
 
     if (titulo == undefined) {
         res.status(400).send("O título está indefinido!");
     } else if (descricao == undefined) {
         res.status(400).send("A descrição está indefinido!");
-    } else if (idUsuario == undefined) {
+    } else if (dieta == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        receitaModel.publicar(titulo, dieta, descricao, ingredientes, foto, modo_preparo)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -97,7 +100,7 @@ function editar(req, res) {
     var novaDescricao = req.body.descricao;
     var idAviso = req.params.idAviso;
 
-    avisoModel.editar(novaDescricao, idAviso)
+    receitaModel.editar(novaDescricao, idAviso)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -116,7 +119,7 @@ function editar(req, res) {
 function deletar(req, res) {
     var idAviso = req.params.idAviso;
 
-    avisoModel.deletar(idAviso)
+    receitaModel.deletar(idAviso)
         .then(
             function (resultado) {
                 res.json(resultado);

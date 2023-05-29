@@ -15,6 +15,8 @@ CREATE TABLE usuario (
      CONSTRAINT chkExp CHECK (experiencia IN ('iniciante', 'pouco', 'medio', 'experiente'))
 );
 
+DESC receitas;
+
 
 
 CREATE TABLE tipoDieta (
@@ -35,9 +37,13 @@ CREATE TABLE receitas(
     modo_preparo TEXT,
     dt_criacao DATETIME default current_timestamp,
     fkTipoDieta_receitas INT,
+    ingredientes TEXT,
     CONSTRAINT const_fkTipoDietaReceita FOREIGN KEY (fkTipoDieta_receitas) 
 		REFERENCES tipoDieta (idTipoDieta)
 );
+
+-- INSERT INTO (nome, descricao, foto, ingredientes, modo_preparo, fkTipoDieta_receitas) VALUES
+	-- ()
 
 INSERT INTO tipoDieta VALUES 
 	(NULL, 'Lacto-ovo-vegetariana'),
