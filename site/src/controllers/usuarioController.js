@@ -124,6 +124,59 @@ function totalUsuarios(req, res) {
         );
 }
 
+function desempenhoGeral(req, res){
+    usuarioModel.desempenhoGeral()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function segmentadoPorGenero(req, res){
+    usuarioModel.segmentadoPorGenero()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+function segmentadoPorIdade(req, res){
+    usuarioModel.segmentadoPorIdade()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
+
 
 
 module.exports = {
@@ -131,5 +184,8 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    totalUsuarios
+    totalUsuarios,
+    desempenhoGeral,
+    segmentadoPorGenero,
+    segmentadoPorIdade
 }

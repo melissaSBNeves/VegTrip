@@ -15,6 +15,18 @@ router.get("/totalUsuarios", function (req, res) {
     usuarioController.totalUsuarios(req, res);
 });
 
+router.get("/desempenhoGeral", function (req, res) {
+    usuarioController.desempenhoGeral(req, res);
+});
+
+router.get("/segmentadoPorGenero", function (req, res) {
+    usuarioController.segmentadoPorGenero(req, res);
+});
+
+router.get("/segmentadoPorIdade", function (req, res) {
+    usuarioController.segmentadoPorIdade(req, res);
+});
+
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);

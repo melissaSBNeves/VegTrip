@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style-admin.css">
     <link rel="stylesheet" href="../css/chart.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
 </head>
 
 <body>
@@ -119,7 +120,7 @@
                         <span class="total_usuarios">
                             Gênero
                         </span>
-                        <canvas id="desempenho_sexo_pie"></canvas>
+                        <canvas id="desempenho_genero_pie"></canvas>
                     </div><!--grafico-pizza-->
 
                     <div class="grafico-barras chart">
@@ -141,30 +142,13 @@
 
 <script>
 
+    atualizarDados()
     const grafico_desempenho_linha = new Chart(document.getElementById('grafico_desempenho_linha'), desempenho_geral);
-    const grafico_desempenho_pizza = new Chart(document.getElementById('desempenho_sexo_pie'), desempenho_sexo);
+    const grafico_desempenho_pizza = new Chart(document.getElementById('desempenho_genero_pie'), desempenho_genero);
     const grafico_desempenho_barra = new Chart(document.getElementById('desempenho_idade_bar'), dsp_idade);
 
 
 
-        fetch("/usuarios/totalUsuarios").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    console.log('Nenhum resultado encontrado.')
-                }
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                        qtd_user.innerHTML = resposta[0].totalUsuarios;
-                        console.log(resposta[0].totalUsuarios)
-                })
-                
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-        });
 
 
 </script>
