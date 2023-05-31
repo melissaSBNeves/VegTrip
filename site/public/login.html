@@ -22,11 +22,11 @@
 <body>
 
     <section class="sessao-form">
-        <!-- <div class="alerta_erro">
+        <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
             </div>
-        </div> -->
+        </div>
 
         <div class="logo">
             <img src="./assets/logo_light.png" alt="">
@@ -45,7 +45,7 @@
 
                     <div class="campoLogin">
                         <span>Senha:</span>
-                        <input id="senha_input" type="password"placeholder="******">
+                        <input id="senha_input" type="password" placeholder="******">
                     </div>
 
                     <div class="campoLogin">
@@ -112,10 +112,25 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.FKADM_USUARIO = json.fkAdm;
 
-                    setTimeout(function () {
-                        window.location = "./user/vegetariano.html";
-                    }, 1000); // apenas para exibir o loading
+                    var nivel =  sessionStorage.FKADMIN_USUARIO;
+
+                    console.log("nivel ", nivel)
+
+                
+                        setTimeout(function () {
+
+                            if(sessionStorage.FKADM_USUARIO == 1){
+                                window.location = "./admin/dashboard.html";
+                            }else{
+                                window.location = "./user/vegetariano.html";
+                            }
+                            
+                        }, 1000); // apenas para exibir o loading
+                        
+        
+
 
                 });
 

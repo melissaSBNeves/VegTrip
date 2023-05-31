@@ -16,7 +16,6 @@ const desempenho_geral = {
   type: 'line',
   data: dados_desempenho_geral,
   options: {
-
   }
 };
 
