@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/user.js"></script>
+    <script src="../js/funcoes.js"></script>
     <link rel="stylesheet" href="../css/style-user.css">
     <link rel="stylesheet" href="../css/veg.css">
     <title>VegTrip | Vegetarianismo</title>
@@ -42,6 +43,7 @@
     <section class="banner-inicial">
         <div class="container">
             <div class="content">
+                <h1>Olá, <span id="b_usuario"></span> </h1>
                 <h1>Tudo o que você precisa saber sobre o vegetarianismo </h1>
             </div> <!--content-->
         </div> <!--container-->
@@ -74,18 +76,20 @@
 
 <script>
 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     mostrarConteudo(historia,1)
 
     function mostrarConteudo(conteudo) {
         conteudo_veg.innerHTML = conteudo;
 
-        var btt = document.getElementById("btt_indice-" + posicao)
+        // var btt = document.getElementById("btt_indice-" + posicao)
         
-        btt.addEventListener("click", () => {
-            btt.style.backgroundColor = "#004D3D";
-            btt.style.color = "#ffff";
+        // btt.addEventListener("click", () => {
+        //     btt.style.backgroundColor = "#004D3D";
+        //     btt.style.color = "#ffff";
 
-        })
+        // })
 
     }
 </script>

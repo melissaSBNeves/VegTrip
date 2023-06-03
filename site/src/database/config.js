@@ -1,3 +1,5 @@
+const mysql = require("mysql2");
+
 // CONEXÃO DO SQL SERVER - AZURE (NUVEM)
 var sqlServerConfig = {
     server: "SEU_SERVIDOR",

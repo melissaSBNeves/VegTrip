@@ -80,8 +80,8 @@
     align-items: center;
     justify-content: center;
     background-image: url(../assets/imgs/banner-s3.png);
-    background-size: cover;
-    background-position: center;
+    background-color: rgba(0, 0, 0, 0.526);
+    background-blend-mode: multiply;
     height: 300px;
 }
 
@@ -120,7 +120,8 @@ h1 {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 80px 0px;
+    gap: 40px;
+    margin: 40px 0px;
     width: 100%;
 }
 
@@ -313,6 +314,7 @@ h1 {
     justify-content: center;
     align-items: center;
     width: 250px;
+    transition: 0.6s;
 
 }
 
@@ -328,6 +330,10 @@ h1 {
 
 }
 
+.box:hover {
+    transform: scale(1.1)
+}
+
 .sessao-6 img{
     width: 200px;
 }
@@ -338,6 +344,8 @@ h1 {
     align-items: center;
     justify-content: center;
     background-image: url(../assets/imgs/fundo-s5.png);
+    background-color: rgba(0, 0, 0, 0.338);
+    background-blend-mode: multiply;
 }
 
 

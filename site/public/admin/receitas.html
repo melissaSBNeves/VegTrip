@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <script src="../js/receitas.js"></script>
+
+    <script src="../js/menu.js"></script>
+    <link rel="stylesheet" href="../css/style-admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Receitas | VegTrip</title>
 </head>
 
-<body>
+<body onload="listarTodasReceitas()">
 
     <!-- Menu Lateral -->
     <nav class="menu-lateral" id="nav_menuLateral">
@@ -20,17 +26,49 @@
         <div class="container">
             <div class="content">
                 <div class="boas-vinda">
-                    <h1>Olá, admin</h1>
+                    <h1>Olá, <span id="nome_usuario"></span></h1>
                     <span class="icon"><i class="bi bi-bell-fill"></i></span>
                 </div>
 
+
                 <div class="subtitulo">
-                    <h2>Acompanhe o desemenho do seu site!</h2>
+                    <h2>Veja todas suas receitas!</h2>
+                    <button onclick="redirect()" id="adicionar_receita">
+                        Adicione
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
                 </div>
+
+                
             </div>
         </div>
     </header>
 
+    <section class="receitas">
+        <div class="container">
+            <div class="content">
+
+               <div class="cards">
+                    <div class="box_receitas">
+                        <img src="../uploads/11f99281b48b1b03950152f1a0256b970f97e2fc11ddf45addd53a6dba91c3e19c921b1a9f32bdd055456248d46abc50100cb1611a6c4867990350279ed91137.jpg" alt="">
+                        <h3>Titulo</h3>
+                        <h4>dieta </h4>
+                        <p>descrição</p>
+                        <button>ver receita</button>
+    
+                    </div> 
+               </div>
+
+            </div>
+        </div>
+
+    </section>
+
 </body>
 
 </html>
+
+<script>
+    nav_menuLateral.innerHTML = menuLateral;
+    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>

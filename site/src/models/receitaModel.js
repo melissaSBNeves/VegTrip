@@ -2,20 +2,8 @@ var database = require("../database/config");
 
 function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-        SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
-        FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
-    `;
+    var instrucao = `SELECT * FROM receitas;`;
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -62,13 +50,13 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
-function publicar(titulo, dieta, descricao, ingredientes, foto, modo_preparo) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, dieta, descricao, ingredientes, foto, modo_preparo);
+function publicar(nome, dieta, descricao, ingredientes, modo_preparo, foto) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", nome, dieta, descricao, ingredientes, foto, modo_preparo);
 
 
     var instrucao = `
         INSERT INTO receitas (nome, descricao, foto, ingredientes, modo_preparo, fkTipoDieta_receitas) 
-        VALUES ('${titulo}', '${descricao}', '${foto}', '${ingredientes}',
+        VALUES ('${nome}', '${descricao}', '${foto}', '${ingredientes}',
         '${modo_preparo}', ${dieta});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);

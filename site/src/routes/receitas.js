@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-
+const upload = require('../database/configUpload.js'); // ARQUIVO COM A COFIGURAÇÃO DO UPLOAD
 var receitaController = require("../controllers/receitaController");
 
 router.get("/", function (req, res) {
@@ -19,9 +19,10 @@ router.get("/pesquisar/:descricao", function (req, res) {
     receitaController.pesquisarDescricao(req, res);
 });
 
-router.post("/publicar", function (req, res) {
+
+router.post('/publicar', upload.single('foto'), (req, res) => {
     receitaController.publicar(req, res);
-});
+  });
 
 router.put("/editar/:idAviso", function (req, res) {
     receitaController.editar(req, res);

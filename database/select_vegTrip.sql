@@ -22,16 +22,22 @@ SELECT count(idUsuario) AS 'totalUsuarios'FROM usuario;
 
 
 -- QUANTIDADE DE USUÁRIOS POR DIA 
+CREATE VIEW view_desempenho_geral AS
 SELECT DATE_FORMAT(dataRegistro, '%m-%d') AS mes_registro,
 		count(idUsuario) AS qtd_registro FROM usuario GROUP BY mes_registro;
+
+SELECT * FROM view_desempenho_geral;
+        
 
 -- QUANTIDADE DE USUÁRIOS POR GÊNERO
 SELECT genero AS genero, count(idUsuario) FROM usuario GROUP BY genero;
 
 -- QUANTIDADE DE USUÁRIOS POR IDADE 
-SELECT timestampdiff(YEAR, dtNac, now()) AS 'idade', count(idUsuario) AS totalUsuario
+CREATE VIEW view_segmentado_idade AS
+SELECT timestampdiff(YEAR, dtNac, now()) AS idade, count(idUsuario) AS totalUsuario
 	FROM usuario GROUP BY idade ORDER BY totalUsuario DESC
     limit 5;
     
+SELECT * FROM view_segmentado_idade;
 
 

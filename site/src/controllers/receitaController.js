@@ -1,5 +1,6 @@
 var receitaModel = require("../models/receitaModel");
 
+
 function testar(req, res) {
     console.log("ENTRAMOS NO avisoController");
     res.send("ENTRAMOS NO AVISO CONTROLLER");
@@ -66,24 +67,17 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var titulo = req.body.titulo;
-    var dieta = req.body.dieta;
-    var descricao = req.body.descricao;
-    var ingredientes = req.body.ingredientes;
-    var foto = req.body.foto;
-    var modo_preparo = req.body.modo_preparo;
+    var foto = req.file.filename;
 
-    if (titulo == undefined) {
-        res.status(400).send("O título está indefinido!");
-    } else if (descricao == undefined) {
-        res.status(400).send("A descrição está indefinido!");
-    } else if (dieta == undefined) {
-        res.status(403).send("O id do usuário está indefinido!");
-    } else {
-        receitaModel.publicar(titulo, dieta, descricao, ingredientes, foto, modo_preparo)
+    const {nome, dieta, descricao, ingredientes, modo_preparo} = req.body
+
+
+        receitaModel.publicar(nome, dieta, descricao, ingredientes, modo_preparo, foto)
             .then(
                 function (resultado) {
                     res.json(resultado);
+                    console.log(resultado);
+                    console.log(foto);
                 }
             )
             .catch(
@@ -94,7 +88,7 @@ function publicar(req, res) {
                 }
             );
     }
-}
+
 
 function editar(req, res) {
     var novaDescricao = req.body.descricao;

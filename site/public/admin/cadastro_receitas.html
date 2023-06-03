@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Receitas | VegTrip</title>
 
-    <script src="../js/menu.js"></script>
+
     <script src="../js/receitas.js"></script>
-
-
     <link rel="stylesheet" href="../css/form.css">
+    
+    <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="../css/style-admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -67,7 +67,7 @@
 
                         <div class="campo">
                             <span>Foto:</span>
-                            <input id="foto_input" type="file">
+                            <input id="foto" type="file" accept="image/*">
                         </div>
 
                         <div class="campo">
@@ -111,7 +111,7 @@
 
 
     function excluir(item){
-        listaIngredientes.splice(item)
+        listaIngredientes.splice(item, 1)
 
         for(var i = 0; i < listaIngredientes.length; i++){
             if(listaIngredientes[i] != listaIngredientes){
@@ -134,10 +134,5 @@
             </button></div>`
         }
     }
-
-    console.log('')
-
-
-
 
 </script>

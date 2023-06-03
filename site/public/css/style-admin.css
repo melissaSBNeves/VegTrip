@@ -120,6 +120,18 @@ header{
     margin-bottom: -20px;
 }
 
+.subtitulo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#adicionar_receita{
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+}
 
 /* ------------------ SESSAO 1 ----------------*/
 .sessao1{
@@ -197,8 +209,8 @@ header{
 
 button{
     padding: 8px;
-    background-color: #fff;
-    color: #004D3D;
+    background-color: #004D3D;
+    color: #ffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -226,3 +238,5 @@ button:active {
     cursor: auto;
     color: grey;
    }
+
+

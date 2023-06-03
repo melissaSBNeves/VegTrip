@@ -15,7 +15,10 @@ CREATE TABLE usuario (
      CONSTRAINT chkExp CHECK (experiencia IN ('iniciante', 'pouco', 'medio', 'experiente'))
 );
 
-DESC receitas;
+ALTER TABLE usuario ADD COLUMN fkAdm INT;
+ALTER TABLE usuario ADD CONSTRAINT const_fkAdm FOREIGN KEY (fkAdm) REFERENCES usuario (idUsuario);
+
+DESC receitas;	
 
 
 
@@ -33,7 +36,7 @@ CREATE TABLE receitas(
 	idReceitas INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(80),
     descricao TEXT,
-    foto VARCHAR(45),
+    foto VARCHAR(255),
     modo_preparo TEXT,
     dt_criacao DATETIME default current_timestamp,
     fkTipoDieta_receitas INT,
@@ -49,4 +52,9 @@ INSERT INTO tipoDieta VALUES
     (NULL, 'Lacto-vegetariana'),
     (NULL, 'Vegana');
     
-SELECT * FROM receitas;
+SELECT * FROM receitas;	
+SELECT * FROM usuario;
+
+SELECT * FROM usuario WHERE email = 'melissa@gmail.com' AND senha = 'melissa' AND fkAdm = 1;
+
+UPDATE usuario SET fkAdm = 1 WHERE idUsuario = 1;
