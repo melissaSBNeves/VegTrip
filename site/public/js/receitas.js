@@ -15,6 +15,8 @@ function publicar() {
 
     if (result.ok) {
       console.log("receita cadastrada com sucesso")
+      window.location = "./receitas.html"
+
     } else {
       throw ("Houve um erro ao tentar realizar o cadastro!")
     }
@@ -37,6 +39,7 @@ function deletar(id) {
   }).then(function (resposta) {
       if (resposta.ok) {
           window.alert("Receita deletada com sucesso");
+          window.location = "./receitas.html"
       } else if (resposta.status == 404) {
           window.alert("Deu 404!");
       } else {
@@ -97,3 +100,4 @@ function listarTodasReceitas() {
     console.error(resposta);
   });
 }
+

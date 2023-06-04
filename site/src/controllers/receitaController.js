@@ -91,10 +91,11 @@ function publicar(req, res) {
 
 
 function editar(req, res) {
-    var novaDescricao = req.body.descricao;
-    var idAviso = req.params.idAviso;
+    var foto = req.file.filename;
 
-    receitaModel.editar(novaDescricao, idAviso)
+    const {nome, dieta, descricao, ingredientes, modo_preparo} = req.body
+
+    receitaModel.editar(nome, dieta, descricao, ingredientes, modo_preparo, foto)
         .then(
             function (resultado) {
                 res.json(resultado);
