@@ -30,7 +30,7 @@
 
 
                     <div class="user">
-                       <button onclick="limparSessao()" class="btn_sair">Sair</button>
+                        <button onclick="limparSessao()" class="btn_sair">Sair</button>
                     </div>
 
                 </div> <!--content-->
@@ -46,8 +46,10 @@
 
                     <div class="pesquisar">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" id="icon_pesquisa" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-search" id="icon_pesquisa" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                         <input type="search" id="pesquisar_input" placeholder="Pesquise sua receita">
 
@@ -56,6 +58,68 @@
                 </div> <!--content-->
             </div> <!--container-->
         </section>
+    </div>
+
+
+    <section class="receitas">
+        <div class="container">
+            <div class="content">
+
+                <div id="cards">
+
+                </div>
+
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
 </body>
 
 </html>
+
+<script>
+    
+    fetch("/receitas/listar").then(function (resposta) {
+    if (resposta.ok) {
+      if (resposta.status == 204) {
+        console.log('Nenhum resultado encontrado.')
+      }
+
+      resposta.json().then(function (resposta) {
+        console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+
+        for (var i = 0; i < resposta.length; i++) {
+          var receita = resposta[i]
+
+          console.log(receita);
+          cards.innerHTML += `
+            <div class="box_receitas">
+            <img src="../uploads/${receita.foto}" alt="">
+
+            <div class="titulo_receita">
+                <h3>${receita.nomeReceita}</h3>
+            </div>
+
+            <div class="detalhes_receitas">
+                <h4>${receita.tipoDieta}</h4>
+                <p>${receita.descricao}</p>
+                <div class="btt_cards">
+                    <button> 
+                      <i class="bi bi-trash"></i>
+                      Ver receita
+                    </button>
+                </div>
+
+            </div>
+        </div>`
+        }
+      });
+    } else {
+      throw ('Houve um erro na API!');
+    }
+  }).catch(function (resposta) {
+    console.error(resposta);
+  });
+
+
+</script>

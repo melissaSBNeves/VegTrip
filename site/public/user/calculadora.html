@@ -8,6 +8,8 @@
     <title>VegTrip | Calculadora de Proteínas</title>
     <link rel="stylesheet" href="../css/style-user.css">
     <link rel="stylesheet" href="../css/form.css">
+
+    <script src="../js/alimentos.js"></script>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
 
 
                     <div class="user">
-                       <button onclick="limparSessao()" class="btn_sair">Sair</button>
+                        <button onclick="limparSessao()" class="btn_sair">Sair</button>
                     </div>
 
                 </div> <!--content-->
@@ -127,34 +129,29 @@
                         </ul>
 
                         <br>
-                        <p>Lembrando que essas serão apenas estimativas e podem variar de pessoa para pessoa. É sempre recomendado buscar a orientação de um profissional de saúde qualificado.</p>
-
-                        
+                        <p>Lembrando que essas serão apenas estimativas e podem variar de pessoa para pessoa. É sempre
+                            recomendado buscar a orientação de um profissional de saúde qualificado.</p>
+                    
                     </div><!-- msgResultado -->
-
-                    <div id="verAlimentos" style="visibility: hidden;">
-                        <button onclick="verAlimentos()">Ver Alimentos</button>
-                    </div>
-
                 </div> <!-- desc-calc -->
             </div> <!-- content -->
         </div> <!-- container -->
     </section>
 
-    <section class="alimentos">
+
+    <section class="alimentos" id="section-alimentos">
         <div class="container">
             <div class="content">
 
-                <div class="alimentos">
-                    
-                    <div class="box-alimentos">
+                <div class="titulos" id="alimentos" style="visibility: hidden;">
 
-                        <img src="" alt="">
+                    <h1>Alimentos ricos em nutrientes</h1>
+                    <h4>Lembrando que nosso objetivo é mostrar como é possível se manter saudável sendo vegetariano
+                    </h4>
+                </div>
 
-                        <p></p>
-        
-                    </div>
-                </div> <!-- alimentos -->
+                <div id="mostrar_alimentos">
+                </div> <!-- mostrar_alimentos -->
 
             </div><!-- content -->
         </div><!-- container -->
@@ -229,19 +226,19 @@
             <span class="destaque">Carboidratos: </span> ${carboidratos.toFixed(2)}g <br><br>
             <span class="destaque">Gorduras: </span> ${gorduras.toFixed(2)}g <br><br></p>
 
-            <h3>Agora veja como é possível bater esses macros sem alimentos de origem animal</h3>
+            <h4>Agora veja como é possível bater esses macros sem alimentos de origem animal</h4>
+            
+            <a href="#section-alimentos">
+            <button onclick="verAlimentos()" id="verAlimentos">Ver Alimentos</button>
+            </a>
             `
-            botaoVisivel()
+           
         }
     }
 
 
-    function botaoVisivel() {
-        var btt_alimentos = document.getElementById("verAlimentos");
-        btt_alimentos.style.visibility = "visible";
-    }
 
-    function verAlimentos(){
 
-    }
+
+
 </script>

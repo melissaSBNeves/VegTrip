@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- <link rel="stylesheet" href="./css/estilo.css"> -->
     <link rel="stylesheet" href="./css/form.css">
-   
+
 </head>
 
 <body>
@@ -29,32 +29,37 @@
         </div>
 
         <div class="logo">
-            <img src="./assets/logo_light.png" alt="">
+            <a href="./index.html">
+                <img src="./assets/logo_light.png" alt="">
+            </a>
         </div>
 
         <div class="container">
 
             <div class="cadastro">
                 <div class="formulario">
-                    <div class="campo">
-                        <span>Nome:</span>
-                        <input id="nome_input" type="text" placeholder="Seu nome">
+
+                    <div class="email_nome">
+                        <div class="campo">
+                            <span>Nome:</span>
+                            <input id="nome_input" type="text" placeholder="Seu nome">
+                        </div>
+                        <div class="campo">
+                            <span>E-mail:</span>
+                            <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                        </div>
                     </div>
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="meuemail@provedor.com">
-                    </div>
-                    
+
                     <div class="dtn-sexo">
 
                         <div class="campo">
                             <span>Data nascimento:</span>
-                            <input id="dtn_input" class="inpPequeno"  type="date">
+                            <input id="dtn_input" class="inpPequeno" type="date">
                         </div>
 
                         <div class="campo">
                             <span>Gênero:</span>
-                            <select name="" id="genero_input" class="inpPequeno" >
+                            <select name="" id="genero_input" class="inpPequeno">
                                 <option value="F">Feminino</option>
                                 <option value="M">Masculino</option>
                                 <option value="O">Outros</option>
@@ -85,11 +90,11 @@
                     <div class="senha-confirma">
                         <div class="campo">
                             <span>Senha:</span>
-                            <input id="senha_input" type="password" placeholder="******" class="inpPequeno" >
+                            <input id="senha_input" type="password" placeholder="******" class="inpPequeno">
                         </div>
                         <div class="campo">
                             <span>Confirmação da Senha:</span>
-                            <input id="confirmacao_senha_input" type="password" placeholder="******" >
+                            <input id="confirmacao_senha_input" type="password" placeholder="******">
                         </div>
                     </div>
 
@@ -98,20 +103,20 @@
                     </div>
 
                     <button class="btn-form" onclick="cadastrar()">Cadastrar</button>
-                    <div id="msgConta">Já tem uma conta? <span><a href="">Entrar</a></span></div>
+                    <div id="msgConta">Já tem uma conta? <span><a href="login.html">Entrar</a></span></div>
 
                 </div><!-- form -->
 
-                
+
                 <div class="img">
                     <img src="./assets/imgs/login.png" alt="">
                 </div>
-                
+
             </div> <!-- cadastro -->
         </div> <!-- container -->
     </section> <!-- login -->
 
-    
+
 </body>
 
 </html>
