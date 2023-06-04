@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <script src="../js/receitas.js"></script>
+    <script src="../js/receitas.js"></script>
 
     <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="../css/style-admin.css">
@@ -39,7 +39,7 @@
                     </button>
                 </div>
 
-                
+
             </div>
         </div>
     </header>
@@ -48,19 +48,11 @@
         <div class="container">
             <div class="content">
 
-               <div class="cards">
-                    <div class="box_receitas">
-                        <img src="../uploads/11f99281b48b1b03950152f1a0256b970f97e2fc11ddf45addd53a6dba91c3e19c921b1a9f32bdd055456248d46abc50100cb1611a6c4867990350279ed91137.jpg" alt="">
-                        <h3>Titulo</h3>
-                        <h4>dieta </h4>
-                        <p>descrição</p>
-                        <button>ver receita</button>
-    
-                    </div> 
-               </div>
+                <div id="cards">
+                 
 
+                </div>
             </div>
-        </div>
 
     </section>
 
@@ -71,4 +63,9 @@
 <script>
     nav_menuLateral.innerHTML = menuLateral;
     nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function redirect(){
+        window.location = "./cadastro_receitas.html"
+    }
+
 </script>

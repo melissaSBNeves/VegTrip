@@ -240,3 +240,68 @@ button:active {
    }
 
 
+/* ------------------- Receitas --------------------*/
+.receitas{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#cards{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-self: center;
+}
+
+.box_receitas img{
+    width: 100%;
+}
+
+.box_receitas{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.452);
+    padding: 15px;
+    border-radius: 8px;
+    transition: 0.8s;
+}
+
+.box_receitas:hover{
+    transform: scale(1.1)
+}
+
+.titulo_receita{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalhes_receitas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.btt_cards{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btt_cards button{
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#excluir{
+    background-color: rgb(225, 91, 91);
+}

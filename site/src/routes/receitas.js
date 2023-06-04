@@ -28,7 +28,7 @@ router.put("/editar/:idAviso", function (req, res) {
     receitaController.editar(req, res);
 });
 
-router.delete("/deletar/:idAviso", function (req, res) {
+router.delete("/deletar", function (req, res) {
     receitaController.deletar(req, res);
 });
 
