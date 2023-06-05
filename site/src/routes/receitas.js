@@ -11,6 +11,11 @@ router.get("/listar", function (req, res) {
     receitaController.listar(req, res);
 });
 
+router.get("/visualizar/:idReceita", function (req, res) {
+    receitaController.visualizarReceita(req, res);
+}); 
+
+
 router.get("/listar/:idUsuario", function (req, res) {
     receitaController.listarPorUsuario(req, res);
 });

@@ -9,9 +9,10 @@
 
     <link rel="stylesheet" href="../css/style-user.css">
     <script src="../js/receitas.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body onload="listarParaUserComum()">
     <div id="fundo-banner-receitas">
         <header>
             <div class="container">
@@ -75,51 +76,3 @@
 </body>
 
 </html>
-
-<script>
-    
-    fetch("/receitas/listar").then(function (resposta) {
-    if (resposta.ok) {
-      if (resposta.status == 204) {
-        console.log('Nenhum resultado encontrado.')
-      }
-
-      resposta.json().then(function (resposta) {
-        console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-
-        for (var i = 0; i < resposta.length; i++) {
-          var receita = resposta[i]
-
-          console.log(receita);
-          cards.innerHTML += `
-            <div class="box_receitas">
-            <img src="../uploads/${receita.foto}" alt="">
-
-            <div class="titulo_receita">
-                <h3>${receita.nomeReceita}</h3>
-            </div>
-
-            <div class="detalhes_receitas">
-                <h4>${receita.tipoDieta}</h4>
-                <p>${receita.descricao}</p>
-                <div class="btt_cards">
-                    <button> 
-                      <i class="bi bi-trash"></i>
-                      Ver receita
-                    </button>
-                </div>
-
-            </div>
-        </div>`
-        }
-      });
-    } else {
-      throw ('Houve um erro na API!');
-    }
-  }).catch(function (resposta) {
-    console.error(resposta);
-  });
-
-
-</script>

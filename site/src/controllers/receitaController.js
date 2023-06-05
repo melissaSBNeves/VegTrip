@@ -20,6 +20,25 @@ function listar(req, res) {
     });
 }
 
+function visualizarReceita(req, res) {
+    var idReceita = req.params.idReceita;
+
+    receitaModel.visualizarReceita(idReceita)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+                console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+                console.log(resultado)
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -69,31 +88,31 @@ function pesquisarDescricao(req, res) {
 function publicar(req, res) {
     var foto = req.file.filename;
 
-    const {nome, dieta, descricao, ingredientes, modo_preparo} = req.body
+    const { nome, dieta, descricao, ingredientes, modo_preparo } = req.body
 
 
-        receitaModel.publicar(nome, dieta, descricao, ingredientes, modo_preparo, foto)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                    console.log(resultado);
-                    console.log(foto);
-                }
-            )
-            .catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
+    receitaModel.publicar(nome, dieta, descricao, ingredientes, modo_preparo, foto)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+                console.log(resultado);
+                console.log(foto);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 
 function editar(req, res) {
     var foto = req.file.filename;
 
-    const {nome, dieta, descricao, ingredientes, modo_preparo} = req.body
+    const { nome, dieta, descricao, ingredientes, modo_preparo } = req.body
 
     receitaModel.editar(nome, dieta, descricao, ingredientes, modo_preparo, foto)
         .then(
@@ -118,6 +137,7 @@ function deletar(req, res) {
         .then(
             function (resultado) {
                 res.json(resultado);
+                console.log()
             }
         )
         .catch(
@@ -136,5 +156,6 @@ module.exports = {
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    visualizarReceita
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VegTrip | Visualizar Receita</title>
+    <link rel="stylesheet" href="../css/style-user.css">
+    <script src="../js/receitas.js"></script>
+</head>
+
+<body>
+    <header id="header_visualizar_receita">
+        <div class="container">
+            <div class="content">
+                <div class="logo">
+                    <img src="../assets/logo_dark.png" alt="">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="vegetariano.html">Vegetarianismo</a></li>
+                        <li><a href="receitas.html">Receitas</a></li>
+                        <li><a href="calculadora.html">Calculadora de Proteínas</a></li>
+                    </ul>
+                </nav>
+
+
+                <div class="user">
+                    <button onclick="limparSessao()" class="btn_sair">Sair</button>
+                </div>
+
+            </div> <!--content-->
+        </div> <!--container-->
+    </header>
+
+
+    <section class="visualizar_receita">
+        <div class="container">
+            <div class="content">
+
+                <div class="receita-visualizada">
+
+                    <div id="img_receita">
+                        
+                    </div>      
+                
+
+                <div class="info-receita">
+        
+                    <div class="campo">
+                        <h2 id="nome_receita">Titulo Receita</h2>
+                    </div>
+
+                    <div class="label">
+                        <div class="campo">Tipo de Receita:</div>
+                        <div class="informacao" id="dieta">Vegana</div>
+                    </div>
+    
+                    <div class="label">
+                        <div class="campo">
+                            Ingredientes:</div>
+                        <div class="informacao">
+                            <ul id="ingrediente">
+        
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="label">
+                        <div class="campo">Modo de preparo:</div>
+                        <div class="informacao">
+                            <p id="modo_preparo">
+                                se vire
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div> <!--content-->
+        </div> <!--container-->
+    </section>
+</body>
+
+</html>
+
+<script>
+    visualizarReceita(sessionStorage.ID_RECEITAS)
+</script>
