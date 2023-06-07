@@ -48,5 +48,8 @@ CREATE VIEW view_receitas AS
             ON idTipoDieta = fkTipoDieta_receitas;
 	
 SELECT * FROM view_receitas;
+
+SELECT * FROM usuario;
+SELECT * FROM receitas;
             
             

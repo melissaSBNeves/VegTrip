@@ -491,6 +491,7 @@ button{
   width: 100%;
   gap: 20px;
   align-self: center;
+  flex-wrap: wrap;
 }
 
 .box_receitas img{
@@ -508,6 +509,7 @@ button{
   padding: 15px;
   border-radius: 8px;
   transition: 0.4s;
+  justify-content: space-around;
 }
 
 .titulo_receita{

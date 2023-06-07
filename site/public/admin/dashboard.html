@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/dashboard.js"></script>
     <script src="../js/menuLateral.js"></script>
+    <script src="../js/funcoes.js"></script>
+
 </head>
 
 <body>
@@ -28,8 +30,9 @@
             <div class="content">
                 <div class="boas-vinda">
                     <h1>Olá, <span id="nome_usuario"></span></h1>
-                    <span class="icon"><i class="bi bi-bell-fill"></i></span>
+                    <button onclick="limparSessao()">Sair</button>
                 </div>
+
 
                 <div class="subtitulo">
                     <h2>Acompanhe o desemenho do seu site!</h2>

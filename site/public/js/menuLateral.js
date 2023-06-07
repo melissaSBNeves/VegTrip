@@ -28,6 +28,7 @@ var menuLateral = `
         </span>
     </a>
 </li>
+
 </ul>
 
 `

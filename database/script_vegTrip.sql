@@ -42,6 +42,7 @@ CREATE TABLE receitas(
 		REFERENCES tipoDieta (idTipoDieta)
 );
 
+SELECT * FROM receitas;
 
 INSERT INTO tipoDieta VALUES 
 	(NULL, 'Lacto-ovo-vegetariana'),
