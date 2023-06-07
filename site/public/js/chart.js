@@ -27,7 +27,8 @@ const dados_desempenho_genero = {
     data: [],
     backgroundColor: [
       'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
+      '#277666',
+      '#5271FF',
     ],
     hoverOffset: 4
   }]

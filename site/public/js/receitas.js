@@ -83,10 +83,6 @@ function listarTodasReceitas() {
                       <i class="bi bi-trash"></i>
                       Excluir
                     </button>
-                    <button id="editar">
-                      <i class="bi bi-pencil-square"></i>
-                      Editar
-                    </button>
                 </div>
 
             </div>

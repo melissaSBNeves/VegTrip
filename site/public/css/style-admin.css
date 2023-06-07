@@ -194,8 +194,9 @@ header{
 /* ------------------ SESSAO 2 ----------------*/
 .sessao2{
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 80px;    
+    height: 400px;
 }
 
 .sessao2 .container .content{
@@ -282,6 +283,8 @@ button:active {
     padding: 15px;
     border-radius: 8px;
     transition: 0.8s;
+    justify-content: space-around;
+    height: 400px;
 }
 
 .box_receitas:hover{

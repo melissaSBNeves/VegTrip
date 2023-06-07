@@ -13,12 +13,8 @@ SELECT idUsuario AS 'id',
 SELECT * FROM view_listar_usuarios;
 
 
-    
-
-
 -- TOTAL USUÁRIOS 
 SELECT count(idUsuario) AS 'totalUsuarios'FROM usuario;
-
 
 
 -- QUANTIDADE DE USUÁRIOS POR DIA 
@@ -40,8 +36,8 @@ SELECT timestampdiff(YEAR, dtNac, now()) AS idade, count(idUsuario) AS totalUsua
     
 SELECT * FROM view_segmentado_idade;
 
-DESC receitas;
 
+-- LISTAR RECEITAS
 CREATE VIEW view_receitas AS
 	SELECT receitas.nome as nomeReceita,
 			descricao as descricao,
@@ -53,13 +49,4 @@ CREATE VIEW view_receitas AS
 	
 SELECT * FROM view_receitas;
             
-
-
-SELECT receitas.nome as nomeReceita,
-			descricao as descricao,
-            foto as foto,
-            modo_preparo,
-            ingredientes,
-            tipoDieta.nome as dieta FROM receitas JOIN tipoDieta 
-            ON idTipoDieta = fkTipoDieta_receitas
-            WHERE idReceitas = 5;
+            
