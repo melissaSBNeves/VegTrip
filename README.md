@@ -1,1 +1,1 @@
-# VeganTrip
+# VegTrip
