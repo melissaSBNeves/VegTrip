@@ -318,3 +318,21 @@ button:active {
 #excluir{
     background-color: rgb(225, 91, 91);
 }
+
+footer{
+    background-color: #004D3D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+ 
+ }
+
+footer h1{
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+ }

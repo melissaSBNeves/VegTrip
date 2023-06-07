@@ -10,8 +10,8 @@
 
     <script src="../js/receitas.js"></script>
     <link rel="stylesheet" href="../css/form.css">
-    
-    <script src="../js/menu.js"></script>
+
+    <script src="../js/menuLateral.js"></script>
     <link rel="stylesheet" href="../css/style-admin.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -29,7 +29,6 @@
             <div class="content">
                 <div class="boas-vinda">
                     <h1>Receitas</h1>
-                    <span class="icon"><i class="bi bi-bell-fill"></i></span>
                 </div>
 
                 <div class="subtitulo">
@@ -62,7 +61,7 @@
 
                         <div class="campo">
                             <span>Descrição:</span>
-                            <textarea name="" id="desc_textarea" cols="30" rows="10"></textarea>
+                            <textarea name="" id="desc_textarea" cols="30" rows="10" placeholder="uma breve descrição sobre sua receita..."></textarea>
                         </div>
 
                         <div class="campo">
@@ -74,7 +73,7 @@
                             <span>Ingredientes:</span>
 
                             <div class="row-ingredientes">
-                                <input type="text" id="inp_ingedientes">
+                                <input type="text" id="inp_ingedientes" placeholder="Ex: 1/4 de farinha">
                                 <button onclick="adcionarIngredientes()">
                                     <i class="bi bi-plus"></i>
                                 </button>
@@ -86,7 +85,7 @@
 
                         <div class="campo">
                             <span>Modo preparo:</span>
-                            <textarea name="" id="modoPreparo_textarea" cols="30" rows="10"></textarea>
+                            <textarea name="" id="modoPreparo_textarea" cols="30" rows="10" placeholder="descreva aqui o modo de preparo"></textarea>
                         </div>
 
 
@@ -99,6 +98,9 @@
         </div><!-- container -->
     </section><!-- form -->
 
+    <footer>
+        <h1>©VegTrip</h1>
+    </footer>
 
 </body>
 
@@ -110,15 +112,18 @@
     var listaIngredientes = [];
 
 
-    function excluir(item){
-        listaIngredientes.splice(item, 1)
+    function excluir(item) {
+        
+        listaIngredientes.splice(item, i)
 
-        for(var i = 0; i < listaIngredientes.length; i++){
-            if(listaIngredientes[i] != listaIngredientes){
-                document.getElementById(`ingredientes${i}`).style.backgroundColor = 'red';
+        for (var i = 0; i < listaIngredientes.length; i++) {
+            if (listaIngredientes[i] != listaIngredientes) {
+                var ingredientes = document.getElementById(`ingredientes${i}`)
+                
+                ingredientes.style.display = 'none';
             }
         }
-        
+
     }
 
     function adcionarIngredientes() {
@@ -126,7 +131,7 @@
 
         listaIngredientes.push(ingredientes);
 
-            mostrarIngredientes.innerHTML = " ";
+        mostrarIngredientes.innerHTML = " ";
         for (var i = 0; i < listaIngredientes.length; i++) {
             mostrarIngredientes.innerHTML += `<div class="ingredientes" id="ingredientes${i}">${listaIngredientes[i]}
             <button id="btn_excluir" onclick="excluir(${i})">

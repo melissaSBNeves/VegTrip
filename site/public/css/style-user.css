@@ -584,6 +584,15 @@ button{
   width: 100%;  
 }
 
+footer{
+  background-color: #004D3D;
+}
+
+footer h1{
+  font-size: 18px;
+  font-weight: 400;
+}
+
 
 
 

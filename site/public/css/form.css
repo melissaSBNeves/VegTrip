@@ -228,3 +228,7 @@ select {
     transition: 0.1s;
 }
 
+.cadastro-receitas .formulario{
+    margin-bottom: 30px;
+}
+

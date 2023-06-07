@@ -38,9 +38,13 @@
 
             <div class="login">
                 <div class="formulario">
+                    
+                    <h1>Bem vindo de volta!</h1>
+
+
                     <div class="campo">
                         <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="meuemail@provedor.com" style="width: 200px;">
+                        <input id="email_input" type="text" placeholder="meuemail@provedor.com" style="width: 400px;">
                     </div>
 
 
@@ -84,8 +88,15 @@
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             return false;
-        }
-        else {
+
+        }else if(emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1 ){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(O email inválido)";
+
+            // finalizarAguardar();
+            return false;
+                   
+        }else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -115,6 +126,8 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
                     sessionStorage.FKADM_USUARIO = json.fkAdm;
+
+                    mensagem_erro.innerHTML = "Login efetuado com suscesso.";
 
                     setTimeout(function () {
 

@@ -11,55 +11,14 @@
     <link rel="stylesheet" href="../css/chart.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/menuLateral.js"></script>
 </head>
 
 <body>
     <!-- Menu Lateral -->
-    <nav class="menu-lateral">
+    <nav class="menu-lateral" id="nav_menuLateral">
 
-        <div class="btn-expandir">
-            <i class="bi bi-list"></i>
-        </div><!--btn-expandir-->
-
-        <ul>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-bar-chart-fill"></i>
-                    </span>
-                    <span class="txt-link">Dashboard</span>
-                </a>
-            </li>
-
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-people-fill"></i></span>
-                    <span class="txt-link">Usuários</span>
-                </a>
-            </li>
-
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-file-earmark-post"></i></span>
-                    <span class="txt-link">
-                        <p>Receitas</p>
-                    </span>
-                </a>
-            </li>
-
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-clipboard-data"></i></span>
-                    <span class="txt-link">Análise de Receitas</span>
-                </a>
-            </li>
-
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-box-arrow-right"></i></span>
-                    <span class="txt-link">Sair</span>
-                </a>
-            </li>
-        </ul>
+      
 
     </nav> <!--Menu Lateral-->
 
@@ -68,7 +27,7 @@
         <div class="container">
             <div class="content">
                 <div class="boas-vinda">
-                    <h1>Olá, admin</h1>
+                    <h1>Olá, <span id="nome_usuario"></span></h1>
                     <span class="icon"><i class="bi bi-bell-fill"></i></span>
                 </div>
 
@@ -136,11 +95,16 @@
         </div><!-- container -->
     </section>
 
-
+    <footer>
+        <h1>©VegTrip</h1>
+    </footer>
     <script src="../js/chart.js"></script>
 </body>
 
 <script>
+    nome_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    nav_menuLateral.innerHTML = menuLateral;
+
 
     atualizarDados()
     const grafico_desempenho_linha = new Chart(document.getElementById('grafico_desempenho_linha'), desempenho_geral);

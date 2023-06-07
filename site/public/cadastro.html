@@ -105,6 +105,8 @@
                     <button class="btn-form" onclick="cadastrar()">Cadastrar</button>
                     <div id="msgConta">Já tem uma conta? <span><a href="login.html">Entrar</a></span></div>
 
+                    <div id="div_erros_login"></div>    
+
                 </div><!-- form -->
 
 
@@ -136,16 +138,41 @@
         var dietaVar = dieta_select.value
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-            finalizarAguardar();
+        var validar_campos = nomeVar == " " || emailVar == " " || senhaVar == " " || dtNascVar == " " || 
+            generoVar == " " || experienciaVar == " " || dietaVar == " " || confirmacaoSenhaVar == " " ;
+
+
+            if(validar_campos){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(preencha todos os campos!)";
+
+            // finalizarAguardar();
             return false;
-        }
-        else {
+                   
+        } else if(emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1 ){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(O email inválido)";
+
+            // finalizarAguardar();
+            return false;
+                   
+        } else if(senhaVar.length < 6){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(A senha precisa ter no mínimo 6 caracteres)";
+
+            // finalizarAguardar();
+            return false;
+        }else if(senhaVar != confirmacaoSenhaVar){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Confirme a senha!)";
+
+            // finalizarAguardar();
+            return false;
+        }else {
             setInterval(sumirMensagem, 5000)
         }
+
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
